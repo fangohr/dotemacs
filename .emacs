@@ -1,10 +1,8 @@
 ;; minimal-ish ~/.emacs config for fast start up.
 ;;
-
+;; assumes package `magit` is installed
 
 (require 'package)
-(add-to-list 'package-archives
-             '("melpa-stable" . "https://stable.melpa.org/packages/"))
 
 ;; tempo snippet for org-mode
 (with-eval-after-load 'org
