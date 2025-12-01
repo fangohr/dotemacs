@@ -14,7 +14,7 @@
  ;; If there is more than one, they won't work right.
  '(org-safe-remote-resources
 '("\\`https://fniessen\\.github\\.io/org-html-themes/org/theme-readtheorg-local\\.setup\\'"))
- '(package-selected-packages '(magit markdown-mode)))
+ '(package-selected-packages '(magit markdown-mode darkroom)))
 
 (display-time-mode t)  ;; display time in status bar.
 (setq display-time-24hr-format nil)    ;; 24h format instead of 12h
