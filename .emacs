@@ -35,3 +35,19 @@
 
 (add-hook 'text-mode-hook
           (lambda () (set-input-method "german-postfix")))
+
+
+;; load nano-emacs
+;;
+;; install via ~git clone https://github.com/rougier/nano-emacs.git ~/.emacs.d/nano-emacs~
+
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/nano-emacs"))
+
+;; If nano.el exists in the repo root:
+(load (expand-file-name "nano.el" "~/.emacs.d/nano-emacs") nil t)
+
+
+;; customize nano-emacs
+
+(setq nano-font-family-monospaced "Roboto Mono")
+
