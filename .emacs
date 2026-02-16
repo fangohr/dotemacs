@@ -41,7 +41,9 @@
 
 ;; load nano-emacs
 ;;
-;; install via ~git clone https://github.com/rougier/nano-emacs.git ~/.emacs.d/nano-emacs~
+;; install via ~git clone https://github.com/rougier/nano-emacs.git
+~/.emacs.d/nano-emacs~
+;; needed font: roboto-mono: ~brew install --cask font-roboto-mono
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/nano-emacs"))
 
