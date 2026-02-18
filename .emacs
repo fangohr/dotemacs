@@ -2,7 +2,12 @@
 ;;
 ;; assumes package `magit` is installed
 
+
 (require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+;; Comment/uncomment this line to enable MELPA Stable if desired.  See `package-archive-priorities`
+;; and `package-pinned-packages`. Most users will not need or want to do this.
+;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 
 ;; tempo snippet for org-mode
 (with-eval-after-load 'org
@@ -14,9 +19,7 @@
  ;; If there is more than one, they won't work right.
  '(org-safe-remote-resources
    '("\\`https://fniessen\\.github\\.io/org-html-themes/org/theme-readtheorg-local\\.setup\\'"))
- '(package-selected-packages
-   '(auctex auctex-cont-latexmk darkroom helm magit markdown-mode popup
-            projectile yaml yaml-mode)))
+ '(package-selected-packages '(agent-shell darkroom magit)))
 
 (display-time-mode t)  ;; display time in status bar.
 (setq display-time-24hr-format nil)    ;; 24h format instead of 12h
@@ -41,8 +44,7 @@
 
 ;; load nano-emacs
 ;;
-;; install via ~git clone https://github.com/rougier/nano-emacs.git
-~/.emacs.d/nano-emacs~
+;; install via ~git clone https://github.com/rougier/nano-emacs.git ~/.emacs.d/nano-emacs~
 ;; needed font: roboto-mono: ~brew install --cask font-roboto-mono
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/nano-emacs"))
@@ -55,3 +57,14 @@
 
 (setq nano-font-family-monospaced "Roboto Mono")
 
+
+
+;; shell-agent, https://github.com/xenodium/agent-shell?tab=readme-ov-files
+
+;; Refresh once if needed, then install agent-shell.
+(unless (package-installed-p 'agent-shell)
+  (unless package-archive-contents
+    (package-refresh-contents))
+  (package-install 'agent-shell))
+
+(require 'agent-shell)
