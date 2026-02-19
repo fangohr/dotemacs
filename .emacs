@@ -47,6 +47,8 @@
 ;; install via ~git clone https://github.com/rougier/nano-emacs.git ~/.emacs.d/nano-emacs~
 ;; needed font: roboto-mono: ~brew install --cask font-roboto-mono
 
+(setq nano-font-size 18)
+
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/nano-emacs"))
 
 ;; If nano.el exists in the repo root:
@@ -58,8 +60,9 @@
 (setq nano-font-family-monospaced "Roboto Mono")
 
 
-
 ;; shell-agent, https://github.com/xenodium/agent-shell?tab=readme-ov-files
+;; Dependency: codex-acp
+;;   brew install codex-acp
 
 ;; Refresh once if needed, then install agent-shell.
 (unless (package-installed-p 'agent-shell)
@@ -68,3 +71,5 @@
   (package-install 'agent-shell))
 
 (require 'agent-shell)
+
+
