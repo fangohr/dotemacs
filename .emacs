@@ -60,6 +60,7 @@
 (setq nano-font-family-monospaced "Roboto Mono")
 
 
+
 ;; shell-agent, https://github.com/xenodium/agent-shell?tab=readme-ov-files
 ;; Dependency: codex-acp
 ;;   brew install codex-acp
@@ -73,3 +74,10 @@
 (require 'agent-shell)
 
 
+
+;; zone for fun
+;;
+;; Run zone after N seconds idle, but *in a dedicated buffer* (Org stays untouched)
+
+(require 'zone)
+(zone-when-idle 300)  ;; after 5 minutes
