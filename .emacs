@@ -19,7 +19,7 @@
  ;; If there is more than one, they won't work right.
  '(org-safe-remote-resources
    '("\\`https://fniessen\\.github\\.io/org-html-themes/org/theme-readtheorg-local\\.setup\\'"))
- '(package-selected-packages '(agent-shell darkroom magit)))
+ '(package-selected-packages '(darkroom magit)))
 
 (display-time-mode t)  ;; display time in status bar.
 (setq display-time-24hr-format nil)    ;; 24h format instead of 12h
@@ -61,17 +61,17 @@
 
 
 
-;; shell-agent, https://github.com/xenodium/agent-shell?tab=readme-ov-files
-;; Dependency: codex-acp
-;;   brew install codex-acp
-
-;; Refresh once if needed, then install agent-shell.
-(unless (package-installed-p 'agent-shell)
-  (unless package-archive-contents
-    (package-refresh-contents))
-  (package-install 'agent-shell))
-
-(require 'agent-shell)
+;; ;; shell-agent, https://github.com/xenodium/agent-shell?tab=readme-ov-files
+;; ;; Dependency: codex-acp
+;; ;;   brew install codex-acp
+;; 
+;; ;; Refresh once if needed, then install agent-shell.
+;; (unless (package-installed-p 'agent-shell)
+;;   (unless package-archive-contents
+;;     (package-refresh-contents))
+;;   (package-install 'agent-shell))
+;; 
+;; (require 'agent-shell)
 
 
 
