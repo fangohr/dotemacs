@@ -19,7 +19,7 @@
  ;; If there is more than one, they won't work right.
  '(org-safe-remote-resources
    '("\\`https://fniessen\\.github\\.io/org-html-themes/org/theme-readtheorg-local\\.setup\\'"))
- '(package-selected-packages '(darkroom magit)))
+ '(package-selected-packages '(amsreftex auctex darkroom magit)))
 
 (display-time-mode t)  ;; display time in status bar.
 (setq display-time-24hr-format nil)    ;; 24h format instead of 12h
@@ -81,3 +81,18 @@
 
 (require 'zone)
 (zone-when-idle 300)  ;; after 5 minutes
+
+
+(require 'tex-site)
+
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(setq-default TeX-master nil)
+
+(setq reftex-plug-into-AUCTeX t)
+
+(add-hook 'LaTeX-mode-hook #'visual-line-mode)
+(add-hook 'LaTeX-mode-hook #'reftex-mode)
+
+
+
