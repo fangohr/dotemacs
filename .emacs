@@ -19,7 +19,10 @@
  ;; If there is more than one, they won't work right.
  '(org-safe-remote-resources
    '("\\`https://fniessen\\.github\\.io/org-html-themes/org/theme-readtheorg-local\\.setup\\'"))
- '(package-selected-packages '(amsreftex auctex darkroom magit)))
+ '(package-selected-packages
+   '(amsreftex auctex darkroom magit magit-browse-commit
+               magit-commit-mark magit-delta magit-diff-flycheck
+               magit-filenotify magit-find-file)))
 
 (display-time-mode t)  ;; display time in status bar.
 (setq display-time-24hr-format nil)    ;; 24h format instead of 12h
@@ -80,7 +83,7 @@
 ;; Run zone after N seconds idle, but *in a dedicated buffer* (Org stays untouched)
 
 (require 'zone)
-(zone-when-idle 300)  ;; after 5 minutes
+;; (zone-when-idle 300)  ;; after 5 minutes - careful; uses energy
 
 
 (require 'tex-site)
@@ -96,3 +99,7 @@
 
 
 
+(add-to-list 'load-path "/opt/homebrew/share/emacs/site-lisp/lilypond")
+(require 'lilypond-mode)
+(add-to-list 'auto-mode-alist '("\\.ly\\'" . LilyPond-mode))
+(setq LilyPond-pdf-command "open -a skim")  ;; macOS
