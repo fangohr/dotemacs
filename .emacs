@@ -103,3 +103,17 @@
 (require 'lilypond-mode)
 (add-to-list 'auto-mode-alist '("\\.ly\\'" . LilyPond-mode))
 (setq LilyPond-pdf-command "open -a skim")  ;; macOS
+
+
+;; in (magit) diffs, highlight added or removed words in addition to whole lines
+;; that have changed:
+
+(setq magit-diff-refine-hunk t)
+
+(add-hook 'diff-mode-hook
+          (lambda ()
+            (setq-local diff-refine 'all)))
+
+(add-hook 'magit-diff-mode-hook
+          (lambda ()
+            (setq-local diff-refine 'all)))
