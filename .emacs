@@ -99,10 +99,10 @@
 
 
 
-(add-to-list 'load-path "/opt/homebrew/share/emacs/site-lisp/lilypond")
-(require 'lilypond-mode)
-(add-to-list 'auto-mode-alist '("\\.ly\\'" . LilyPond-mode))
-(setq LilyPond-pdf-command "open -a skim")  ;; macOS
+; (add-to-list 'load-path "/opt/homebrew/share/emacs/site-lisp/lilypond")
+; (require 'lilypond-mode)
+; (add-to-list 'auto-mode-alist '("\\.ly\\'" . LilyPond-mode))
+; (setq LilyPond-pdf-command "open -a skim")  ;; macOS
 
 
 ;; in (magit) diffs, highlight added or removed words in addition to whole lines
