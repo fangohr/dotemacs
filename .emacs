@@ -86,6 +86,9 @@
 ;; (zone-when-idle 300)  ;; after 5 minutes - careful; uses energy
 
 
+(use-package tex
+  :ensure auctex)
+
 (require 'tex-site)
 
 (setq TeX-auto-save t)
